@@ -1,7 +1,9 @@
+// Anything with the # symbol will be evaluated within preprocessor
 #include <stdio.h>
 #include <stdlib.h>
-
 #include <editline/readline.h>
+
+#include "mpc.h"
 
 int main(int argc, char** argv) {
 
