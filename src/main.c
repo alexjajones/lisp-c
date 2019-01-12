@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-static char input[2048];
+#include <editline/readline.h>
 
 int main(int argc, char** argv) {
 
@@ -8,12 +9,16 @@ int main(int argc, char** argv) {
 	puts("Lispy Version 0.0.0.1");
 	
 	while(1) {
-		// Prints to stdout without newline
-		fputs("lispy> ", stdout);
-		// Waits for user input and assigns to `input`	
-		fgets(input, 2048, stdin);
+		// Outputs to prompt and gets user input
+		char* input = readline("lispy> ");
 
-		printf("No you're a %s", input);
+		// Adds the input to history
+		add_history(input);
+
+		printf("No you're a %s\n", input);
+
+		// Frees up memory of input value
+		free(input);
 	}
 
 	return 0;
