@@ -1,5 +1,5 @@
 #include "helpers.h"
-#include "minunit.h"
+#include "libs/minunit.h"
 
 MU_TEST(test_check) {
   mu_check(test_func() == 7);
